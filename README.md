@@ -1,8 +1,9 @@
 # Wibsite-Rank-Checker-tool
-how to check website ranking on keyword in python program
 
 from googlesearch import search
+
 import math
+
 import urllib
 
 my_website = "https://manfarid.pk"
