@@ -1,0 +1,36 @@
+from googlesearch import search
+import math
+import urllib
+
+my_website = "https://manfarid.pk"
+
+print(f'Welcome to SEO Python keyword Rank finder, {my_website}')
+
+keywords = [
+  'manfarid', 'golarchi fruit', 'chicken drumsticks price',
+  'chicken leg piece price in pakistan', 'chicken drum stick price',
+  'saram fish', 'saram fish price in karachi', 'chicken online karachi',
+  'cheekoo', 'surmai machi',]
+
+print('\nSearching the whole Google for you...\n')
+
+
+y = 0
+for x in keywords:
+  urls = search(keywords[y], tld="com", num=100, stop=100, pause=2)
+
+  found = False
+  for index, url in enumerate(urls):
+    if my_website in url:
+      print(
+        f"\n{y+1}. Keyword: '{keywords[y]}' Rank: {index+1}, page:{math.ceil((index+1)/10)} \n"
+      )
+
+      found = True
+      break
+
+  if not found:
+    print(f"\n{y+1}. Keyword: '{keywords[y]}' not found in first 100 pages.\n")
+  y = y + 1
+
+input('press enter to exit')
